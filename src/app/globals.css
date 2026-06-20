@@ -10,4 +10,38 @@ body {
   @apply bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
 }
 
+/* Custom Scrollbar Styles for Premium Look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-slate-200 transition-colors hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700;
+}
+
+/* Checkbox Checkmark Draw-in Animation */
+@keyframes checkmark-draw {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-checkmark {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: checkmark-draw 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Premium Focus States */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-500 dark:outline-brand-400;
+}
 
